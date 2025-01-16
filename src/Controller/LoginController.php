@@ -12,15 +12,9 @@ class LoginController extends AbstractController
     #[Route('/login', name: 'app_login')]
     public function index(AuthenticationUtils $authenticationUtils): Response
     {
-        
-        
         $error = $authenticationUtils->getLastAuthenticationError();
-
         $lastUsernam = $authenticationUtils->getLastUsername();
-        
-        
-        
-        
+
         return $this->render('login/index.html.twig', [
             'controller_name' => 'LoginController',
             'error' => $error,
@@ -31,7 +25,7 @@ class LoginController extends AbstractController
     #[Route('/deconnexion', name: 'app_logout', methods: ['GET'])]
     public function logout(): never
     {
-        
+
         throw new \Exception('Vous êtes déconnecté');
 
     }

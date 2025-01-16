@@ -23,8 +23,8 @@ class RegisterController extends AbstractController
         if ($registerForm->isSubmitted() && $registerForm->isValid()) {
             $entityManager->persist($user);
             $entityManager->flush();
-            $this->addFlash("success", "Votre compte a bien été créé");
 
+            $this->addFlash("success", "Votre compte a bien été créé");
             return $this->redirectToRoute('app_login');
 
         }
